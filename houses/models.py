@@ -6,7 +6,7 @@ from users.models import NULLABLE
 class House(models.Model):
 
     name = models.CharField(max_length=250, verbose_name='Название')
-    preview_image = models.ImageField(upload_to='house_card/', **NULLABLE, verbose_name='Превью дома')
+    preview_image = models.ImageField(upload_to='house_cards/', **NULLABLE, verbose_name='Превью дома')
     price = models.CharField(max_length=100, verbose_name='Цена')
     size = models.CharField(max_length=250, **NULLABLE, verbose_name='Габариты')
     photo_house = models.ImageField(upload_to='houses/', **NULLABLE, verbose_name='Фото дома')
