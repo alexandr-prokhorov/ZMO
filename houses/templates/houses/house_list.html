@@ -1,0 +1,22 @@
+{% extends 'houses/base.html' %}
+
+{% block title %}Список домов{% endblock %}
+
+{% block content %}
+    <div class="row">
+        {% for house in houses %}
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    {% if house.photo %}
+                        <img src="{{ house.photo.url }}" class="card-img-top" alt="{{ house.name }}">
+                    {% endif %}
+                    <div class="card-body">
+                        <h5 class="card-title">{{ house.name }}</h5>
+                        <p class="card-text">Цена: {{ house.price }} ₽</p>
+                        <a href="{% url 'house-detail' house.pk %}" class="btn btn-primary">Подробнее</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

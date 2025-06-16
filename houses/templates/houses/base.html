@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Недвижимость{% endblock %}</title>
+
+    <!-- Bootstrap 5 (опционально) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Статические файлы (CSS/JS) -->
+    {% load static %}
+    <link href="{% static 'css/bootstrap.css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Дополнительные head-элементы -->
+    {% block extra_head %}{% endblock %}
+</head>
+<body>
+    <!-- Шапка сайта -->
+    <header class="bg-light py-3">
+        <div class="container">
+            <h1 class="text-center">Продажа домов</h1>
+            <nav>
+                <ul class="nav justify-content-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'house-list' %}">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admin/">Админка</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Основное содержимое -->
+    <main class="container my-5">
+        {% block content %}
+        <!-- Сюда подставляется контент из дочерних шаблонов -->
+        {% endblock %}
+    </main>
+
+    <!-- Подвал -->
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container text-center">
+            <p>&copy; 2024 Продажа домов. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <!-- Скрипты -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'js/popper.min.js'%}"></script>
+    <script src="{% static 'js/bootstrap.js/bootstrap.min.js'%}"></script>
+    <script src="{% static 'js/holder.min.js'%}"></script>
+    {% block scripts %}{% endblock %}
+</body>
+</html>
