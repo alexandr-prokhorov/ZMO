@@ -5,17 +5,24 @@
 {% block content %}
     <div class="row">
         {% for house in houses %}
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    {% if house.photo %}
-                        <img src="{{ house.photo.url }}" class="card-img-top" alt="{{ house.name }}">
-                    {% endif %}
-                    <div class="card-body">
+            <div class="col-md-6 mb-4">
+                <a href="{% url 'house-detail' house.pk %}" class="card clickable-card" style="
+                    background-image: url('{{ house.preview_image.url }}');
+                    background-size: cover;
+                    background-position: center;
+                    height: 400px;
+                    color: white;
+                    text-decoration: none;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-end;
+                ">
+                    <div style="background: rgba(0, 0, 0, 0.5); padding: 1rem;">
                         <h5 class="card-title">{{ house.name }}</h5>
-                        <p class="card-text">Цена: {{ house.price }} ₽</p>
-                        <a href="{% url 'house-detail' house.pk %}" class="btn btn-primary">Подробнее</a>
+                        <p class="card-text">Цена: {{ house.price }} </p>
+                        <p class="card-text">Габариты: {{ house.size }}</p>
                     </div>
-                </div>
+                </a>
             </div>
         {% endfor %}
     </div>

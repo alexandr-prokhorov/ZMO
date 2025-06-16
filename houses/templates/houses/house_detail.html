@@ -6,14 +6,14 @@
     <div class="card">
         <div class="row g-0">
             <div class="col-md-6">
-                {% if house.photo %}
-                    <img src="{{ house.photo.url }}" class="img-fluid rounded-start" alt="{{ house.name }}">
+                {% if house.photo_house %}
+                    <img src="{{ house.photo_house.url }}" class="img-fluid rounded-start" alt="{{ house.name }}">
                 {% endif %}
             </div>
             <div class="col-md-6">
                 <div class="card-body">
                     <h1 class="card-title">{{ house.name }}</h1>
-                    <p class="card-text"><strong>Цена:</strong> {{ house.price }} ₽</p>
+                    <p class="card-text"><strong>Цена:</strong> {{ house.price }} </p>
                     <p class="card-text"><strong>Габариты:</strong> {{ house.size }}</p>
                     <p class="card-text"><strong>Описание:</strong> {{ house.description }}</p>
                     <a href="{% url 'house-list' %}" class="btn btn-secondary">Назад к списку</a>
