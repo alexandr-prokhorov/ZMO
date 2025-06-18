@@ -1,10 +1,102 @@
 .clickable-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
 }
+
 .clickable-card:hover, .clickable-card:focus {
-  transform: scale(1.005);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-  text-decoration: none;
-  outline: none;
+    transform: scale(1.005);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    text-decoration: none;
+    outline: none;
+}
+
+.plan-item .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.plan-item .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+    object-fit: cover;
+    height: 200px;
+}
+
+.plan-item .card {
+    border: none; /* Убираем границы карточки */
+    border-radius: 0; /* Убираем скругление углов */
+}
+
+.plan-item .card-img-top {
+    width: 100%;
+    max-height: 80vh;
+    object-fit: contain; /* Сохраняет пропорции изображения */
+}
+
+.plan-item .card-body {
+    padding: 1.5rem;
+    background: #f8f9fa; /* Фон для текстовой части */
+}
+
+.plan-item {
+    margin-bottom: 2rem !important;
+}
+
+.image-container {
+    background-color: #f8f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+}
+
+.card-body {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.spec-card {
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    transform-origin: center;
+}
+
+.spec-card:hover {
+    transform: scale(1.08);
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1) !important;
+    border-color: #444 !important;
+}
+
+.plans-large-text {
+    font-size: 1.5rem; /* Базовый размер */
+}
+
+.plans-large-text .card-title {
+    font-size: 1.8rem !important;
+}
+
+.plans-large-text .text-muted {
+    font-size: 1.5rem !important;
+}
+
+/* Фиксируем шапку вверху */
+.fixed-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1030;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Отступ для основного контента, чтобы он не скрывался под шапкой */
+body {
+    padding-top: 60px;
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 768px) {
+    body {
+        padding-top: 56px;
+    }
 }
