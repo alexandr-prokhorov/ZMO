@@ -3,22 +3,117 @@
 {% block title %}{{ house.name }}{% endblock %}
 
 {% block content %}
-    <div class="card">
-        <div class="row g-0">
-            <div class="col-md-6">
-                {% if house.photo_house %}
-                    <img src="{{ house.photo_house.url }}" class="img-fluid rounded-start" alt="{{ house.name }}">
-                {% endif %}
-            </div>
-            <div class="col-md-6">
-                <div class="card-body">
-                    <h1 class="card-title">{{ house.name }}</h1>
-                    <p class="card-text"><strong>Цена:</strong> {{ house.price }} </p>
-                    <p class="card-text"><strong>Габариты:</strong> {{ house.size }}</p>
-                    <p class="card-text"><strong>Описание:</strong> {{ house.description }}</p>
-                    <a href="{% url 'house-list' %}" class="btn btn-secondary">Назад к списку</a>
+<div class="card border-0">
+    <div class="position-relative" style="min-height: 500px;">
+        {% if house.photo_house %}
+        <div class="position-absolute w-100 h-100"
+             style="background: url('{{ house.photo_house.url }}') center/cover no-repeat; filter: brightness(0.8);">
+        </div>
+        {% endif %}
+
+        <div class="position-relative h-100 d-flex align-items-center" style="z-index: 2;">
+            <div class="card-body text-white p-4" style="background-color: rgba(0,0,0,0.5); max-width: 60%;">
+                <h1 class="card-title display-4">{{ house.name }}</h1>
+                <p class="card-text fs-4"><strong>Цена:</strong> {{ house.price }}</p>
+                <p class="card-text fs-4"><strong>Габариты:</strong> {{ house.size }}</p>
+
+                <div class="mt-4 pt-2" style="border-top: 1px solid rgba(255,255,255,0.2);">
                 </div>
             </div>
         </div>
     </div>
+</div>
+<div class="container-fluid bg-dark text-white py-1">
+    <div class="row justify-content-center g-4">
+        <div class="col-md-2 col-6">
+            <div class="bg-black rounded-3 p-3 h-100 text-center">
+                <p class="text-uppercase text-muted mb-0" style="font-size: 1rem;">Этажей</p>
+                <p class="fw-bold mb-1" style="font-size: 1.5rem;">{{ house.floor }}</p>
+            </div>
+        </div>
+
+        <div class="col-md-2 col-6">
+            <div class="bg-black rounded-3 p-3 h-100 text-center">
+                <p class="text-uppercase text-muted mb-0" style="font-size: 1rem;">Площадь</p>
+                <p class="fw-bold mb-1" style="font-size: 1.5rem;">{{ house.total_area }}</p>
+            </div>
+        </div>
+
+        <div class="col-md-2 col-6">
+            <div class="bg-black rounded-3 p-3 h-100 text-center">
+                <p class="text-uppercase text-muted mb-0" style="font-size: 1rem;">Спальни</p>
+                <p class="fw-bold mb-1" style="font-size: 1.5rem;">{{ house.bedroom }}</p>
+            </div>
+        </div>
+
+        <div class="col-md-2 col-6">
+            <div class="bg-black rounded-3 p-3 h-100 text-center">
+                <p class="text-uppercase text-muted mb-0" style="font-size: 1rem;">Санузлы</p>
+                <p class="fw-bold mb-1" style="font-size: 1.5rem;">{{ house.bathroom }}</p>
+            </div>
+        </div>
+
+        <div class="col-md-2 col-6">
+            <div class="bg-black rounded-3 p-3 h-100 text-center">
+                <p class="text-uppercase text-muted mb-0" style="font-size: 1rem;">Гостиная</p>
+                <p class="fw-bold mb-1" style="font-size: 1.5rem;">{{ house.living_room_area }}</p>
+            </div>
+        </div>
+
+        <div class="col-md-2 col-6">
+            <div class="bg-black rounded-3 p-3 h-100 text-center">
+                <p class="text-uppercase text-muted mb-0" style="font-size: 1rem;">Террасы</p>
+                <p class="fw-bold mb-1" style="font-size: 1.5rem;">{{ house.terrace_count }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="my-5 py-3">
+    <h2 style="font-size: 2rem;">Описание</h2>
+    <div>
+        <p>{{ house.description|linebreaks }}</p>
+    </div>
+</div>
+<div class="plans-section mt-5 text-center">
+    <h3 class="mb-4" style="font-size: 2rem;">Планы и фасады дома</h3>
+
+    <div id="plans-container" class="row plans-large-text">
+        {% include 'houses/_plans_partial.html' %}
+    </div>
+</div>
+<div>
+    <nav aria-label="Plans pagination">
+        <ul class="pagination justify-content-center">
+            {% if plans_page_obj.has_previous %}
+            <li class="page-item">
+                <a class="page-link paginate-btn"
+                   href="#"
+                   data-page="{{ plans_page_obj.previous_page_number }}">
+                    &laquo;
+                </a>
+            </li>
+            {% endif %}
+
+            {% for num in plans_page_obj.paginator.page_range %}
+            <li class="page-item {% if plans_page_obj.number == num %}active{% endif %}">
+                <a class="page-link paginate-btn"
+                   href="#"
+                   data-page="{{ num }}">
+                    {{ num }}
+                </a>
+            </li>
+            {% endfor %}
+
+            {% if plans_page_obj.has_next %}
+            <li class="page-item">
+                <a class="page-link paginate-btn"
+                   href="#"
+                   data-page="{{ plans_page_obj.next_page_number }}">
+                    &raquo;
+                </a>
+            </li>
+            {% endif %}
+        </ul>
+    </nav>
+</div>
 {% endblock %}
