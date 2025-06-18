@@ -39,3 +39,17 @@ class HousePlan(models.Model):
     def __str__(self):
         return f"План {self.plan.name} (#{self.order})"
 
+class HouseImage(models.Model):
+
+    house = models.ForeignKey(House, on_delete=models.CASCADE, verbose_name='Дом')
+    images = models.ImageField(upload_to='house_images/', **NULLABLE, verbose_name='Изображение')
+    order = models.PositiveIntegerField(default=0, verbose_name='Порядок сортировки')
+
+    class Meta:
+        verbose_name = 'house_image'
+        verbose_name_plural = 'house_images'
+        ordering = ['order']
+
+    def __str__(self):
+        return f'Фото {self.images.name} (#{self.order})'
+
