@@ -10,6 +10,8 @@
     <link href="{% static 'css/album.css' %}" rel="stylesheet">
     <link href="{% static 'css/style.css' %}" rel="stylesheet">
     <link href="{% static 'css/style2.css' %}" rel="stylesheet">
+    <link href="{% static 'css/style3.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     {% block extra_head %}{% endblock %}
 </head>
 <body>
@@ -28,17 +30,31 @@
                         <img src="{% static 'images/logo.png' %}" alt="Логотип" style="height: 40px;">
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link text-dark fw-bold" href="{% url 'house-list' %}">Главная</a>
+                 <li class="nav-item">
+                    <a class="nav-link text-dark fw-bold" href="#contacts">ПОСЕЛКИ</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark fw-bold" href="#projects">Проекты</a>
+                    <a class="nav-link text-dark fw-bold" href="{% url 'house-list' %}">ГОТОВЫЕ ДОМА</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark fw-bold" href="#contacts">Контакты</a>
+                    <a class="nav-link text-dark fw-bold" href="#projects">О КОМПАНИИ</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark fw-bold" href="/admin/">Админка</a>
+                    <a class="nav-link text-dark fw-bold" href="#contacts">ОФОРМЛЕНИЕ</a>
+                </li>
+                 <li class="nav-item">
+                    <a class="nav-link text-dark fw-bold" href="#contacts">КОНТАКТЫ</a>
+                </li>
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link text-dark fw-bold" href="/admin/">Админка</a>-->
+<!--                </li>-->
+                <li class="nav-item">
+                    <a class="nav-link" href="https://t.me/+79268438363">
+                        <img src="{% static 'images/telegram.png' %}" alt="Логотип" style="height: 30px;">
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <p>+7 (926) 843 83 63</p>
                 </li>
             </ul>
         </nav>
@@ -80,6 +96,13 @@
         </div>
     </div>
 </div>
+        <a href="https://api.whatsapp.com/send?phone=79033861131" target="_blank" rel="noopener noreferrer">
+            <div type="button" class="whatsapp-button">
+                <div class="text-button">
+                    <img src="/static/images/whatsapp.svg" alt="WhatsApp" class="whatsapp-icon"><span></span>
+                </div>
+            </div>
+        </a>
         <div>
             <a class="nav-link" href="{% url 'house-list' %}">Главная</a>
             <a class="nav-link" href="#projects">Проекты</a>
