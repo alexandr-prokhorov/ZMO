@@ -1,5 +1,5 @@
 {% extends 'houses/base.html' %}
-
+{% load static %}
 {% block content %}
 <div class="container mt-5">
     <h2 class="mb-4 text-left">Оформление</h2>
@@ -46,8 +46,14 @@
                 </td>
                 <td class="text-center align-middle">
                     {% if partner.yandex_map %}
-                    <a href="{{ partner.yandex_map }}" target="_blank" class="btn btn-primary btn-sm" style="background-color: #B0E97D; color: black; border: none;>
-                                <i class=" fas fa-map-marked-alt"></i> На карте
+                    <a href="{{ partner.yandex_map }}" target="_blank"
+                       style="display: inline-block; margin-right: 5px;">
+                        <img src="{% static 'images/yandex_icon.png' %}" alt="Яндекс Карты"
+                             style="height: 70px; vertical-align: middle; padding-top: 10px;">
+                    </a>
+                    <a href="{{ partner.yandex_map }}" target="_blank" class="btn btn-primary btn-sm"
+                       style="background-color: #B0E97D; color: black; border: none;">
+                        <i class="fas fa-map-marked-alt"></i> На карте
                     </a>
                     {% endif %}
                 </td>

@@ -10,7 +10,6 @@
     <link href="{% static 'css/album.css' %}" rel="stylesheet">
     <link href="{% static 'css/style.css' %}" rel="stylesheet">
     <link href="{% static 'css/style2.css' %}" rel="stylesheet">
-    <link href="{% static 'css/style3.css' %}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     {% block extra_head %}{% endblock %}
 </head>
@@ -19,7 +18,7 @@
 <header class="fixed-header bg-light py-3">
     <!-- Фоновое изображение (z-index: 0) -->
     <div class="position-absolute top-0 start-0 w-100 h-100"
-     style="background: url('{% static 'images/head.png' %}') repeat-x bottom left; z-index: 0;">
+         style="background: url('{% static 'images/head.png' %}') repeat-x bottom left; z-index: 0;">
     </div>
 
     <!-- Основное содержимое (z-index: 1) -->
@@ -95,17 +94,22 @@
             </div>
         </div>
     </div>
-    <a href="https://api.whatsapp.com/send?phone=+7 (926) 843 83 63" target="_blank" rel="noopener noreferrer">
-        <div type="button" class="whatsapp-button">
+    <a href="https://api.whatsapp.com/send/?phone=79265572757&text&type=phone_number&app_absent=0" target="_blank"
+       rel="noopener noreferrer" style="position: fixed; right: 20px; bottom: 80px; z-index: 1000;">
+        <div type="button">
             <div class="text-button">
-                <img src="/static/images/whatsapp.svg" alt="WhatsApp" class="whatsapp-icon"><span></span>
+                <img src="/static/images/whatsapp1.gif" alt="WhatsApp" class="whatsapp-icon"
+                     style="width: 200px; height: auto;">
             </div>
         </div>
     </a>
     <div>
         <a class="nav-link" href="{% url 'house-list' %}">Главная</a>
-        <a class="nav-link" href="#projects">Проекты</a>
-        <a class="nav-link" href="#contacts">Контакты</a>
+        <a class="nav-link" href="#projects">Поселки</a>
+        <a class="nav-link" href="{% url 'house-list' %}">Готовые дома</a>
+        <a class="nav-link" href="#projects">О компании</a>
+        <a class="nav-link" href="{% url 'partners_list' %}">Оформление</a>
+        <a class="nav-link" href="{% url 'contacts' %}">Контакты</a>
         <a class="nav-link" href="/admin/">Админка</a>
     </div>
 </main>
