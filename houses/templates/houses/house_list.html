@@ -5,7 +5,7 @@
 {% block content %}
     <div class="row">
         {% for house in houses %}
-            <div class="col-md-6 mb-4" style="padding-top: 10px;">
+            <div class="col-md-6 mb-4">
                 <a href="{% url 'house-detail' house.pk %}" class="card clickable-card" style="
                     background-image: url('{{ house.preview_image.url }}');
                     background-size: cover;
