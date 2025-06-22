@@ -4,6 +4,8 @@ from django.views.generic import ListView, DetailView
 from django.core.paginator import Paginator
 from django.template.loader import render_to_string
 from houses.models import House, HousePlan
+from django.views import View
+from django.shortcuts import render
 
 
 class PaginatedPlansMixin:
@@ -61,3 +63,8 @@ class HousePlanListView(ListView):
     context_object_name = 'plans'
     paginate_by = 10
     ordering = ['order']
+
+class ContactsView(View):
+    template_name = 'houses/contacts.html'  # Укажите путь к вашему шаблону
+    def get(self, request):
+        return render(request, self.template_name)

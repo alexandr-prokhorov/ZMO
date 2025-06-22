@@ -29,7 +29,7 @@ urlpatterns = [
     path('', redirect_to_houses),  # Добавляем редирект с корня
     path('admin/', admin.site.urls),
     path('houses/', include('houses.urls')),
-    path('partners/', include('partners.urls')),# Подключаем маршруты приложения houses
+    path('partners/', include('partners.urls')),
 ]
 
 if settings.DEBUG:

@@ -1,0 +1,22 @@
+{% extends 'houses/base.html' %}
+{% load static %}
+{% block title %}Контакты{% endblock %}
+{% block content %}
+<div class="container mt-5">
+  <h2 class="mb-4 text-left">Контакты</h2>
+  <div class="row">
+    <div class="col-md-6">
+      <h5>Офис продаж:</h5>
+      <p>Бизнес Центр Румянцево, 13 подъезд</p>
+      <p>Будни: с 9:00 до 18:00</p>
+      <h5 style="padding-bottom: 10px;">Телефон:</h5> <a href="tel:+79268438363 " style="padding-bottom: 10px;">+7 (926) 843 83 63</a>
+      <h5 style="padding-top: 10px;">Телеграм:</h5> <a href="https://t.me/+79268438363" target="_blank">
+        <img src="{% static 'images/telegram.png' %}" alt="Логотип" style="height: 70px; vertical-align: middle; margin-left: 5px; padding-top: 20px;"> Telegram</a>
+
+    </div>
+    <div class="col-md-6" style="padding: 0; margin: 0;">
+      <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Adee477fe1e9d6ca15d1308e455ec53f27fa08c7ad42f6fbab3a09be5f0e59a7f&amp;source=constructor" width="140%" height="400" style="margin-left: -40%; border: none;"></iframe>
+    </div>
+  </div>
+</div>
+{% endblock %}
