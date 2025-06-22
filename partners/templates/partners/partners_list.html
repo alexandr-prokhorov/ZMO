@@ -1,0 +1,64 @@
+{% extends 'houses/base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="mb-4 text-left">Оформление</h2>
+
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover">
+            <thead class="thead-light">
+            <tr>
+                <th class="text-center"
+                    style="background-color: #B0E97D; color: black; width: 15%; vertical-align: top">Поселок
+                </th>
+                <th class="text-center" style="background-color: #B0E97D; color: black; width: 20%;">Стоимость
+                    оформления и платной брони
+                </th>
+                <th class="text-center"
+                    style="background-color: #B0E97D; color: black; width: 20%; vertical-align: top">Адрес офиса
+                </th>
+                <th class="text-center"
+                    style="background-color: #B0E97D; color: black; width: 15%; vertical-align: top">Карта
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for partner in partners %}
+            <tr style="background-color: {% if forloop.counter|divisibleby:2 %} #f0f0f0 {% else %} #ffffff {% endif %};">
+                <td class="text-center align-middle">
+                    {% if partner.image %}
+                    <img src="{{ partner.image.url }}" alt="{{ partner.name }}" class="img-fluid"
+                         style="max-height: 80px;">
+                    {% endif %}
+                </td>
+                <td class="align-middle">
+                    {% if partner.registration %}
+                    <p><strong>Оформление:</strong> {{ partner.registration }} руб.</p>
+                    {% endif %}
+                    {% if partner.reservation %}
+                    <p><strong>Платная бронь:</strong> {{ partner.reservation }} руб.</p>
+                    {% endif %}
+                </td>
+                <td class="align-middle">
+                    {% if partner.address %}
+                    {{ partner.address|linebreaks }}
+                    {% endif %}
+                </td>
+                <td class="text-center align-middle">
+                    {% if partner.yandex_map %}
+                    <a href="{{ partner.yandex_map }}" target="_blank" class="btn btn-primary btn-sm" style="background-color: #B0E97D; color: black; border: none;>
+                                <i class=" fas fa-map-marked-alt"></i> На карте
+                    </a>
+                    {% endif %}
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="5" class="text-center">Партнеры не найдены</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
