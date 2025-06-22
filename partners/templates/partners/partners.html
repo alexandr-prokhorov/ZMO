@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="mb-4">Оформление</h2>
+    
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover">
+            <thead class="thead-light">
+                <tr>
+                    <th style="width: 15%">Логотип</th>
+                    <th style="width: 20%">Услуги и цены</th>
+                    <th style="width: 30%">Контакты</th>
+                    <th style="width: 20%">Адрес</th>
+                    <th style="width: 15%">Карта</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for partner in partners %}
+                <tr>
+                    <td class="text-center align-middle">
+                        {% if partner.image %}
+                            <img src="{{ partner.image.url }}" alt="{{ partner.name }}" class="img-fluid" style="max-height: 80px;">
+                        {% endif %}
+                        {% if partner.name %}
+                            <h5 class="mt-2">{{ partner.name }}</h5>
+                        {% endif %}
+                    </td>
+                    <td class="align-middle">
+                        {% if partner.registration %}
+                            <p><strong>Оформление:</strong> {{ partner.registration }} руб.</p>
+                        {% endif %}
+                        {% if partner.reservation %}
+                            <p><strong>Платная бронь:</strong> {{ partner.reservation }} руб.</p>
+                        {% endif %}
+                    </td>
+                    <td class="align-middle">
+                        {% if partner.phone %}
+                            <p><strong>Телефон:</strong> {{ partner.phone }}</p>
+                        {% endif %}
+                        {% if partner.website %}
+                            <p><strong>Сайт:</strong> <a href="{{ partner.website }}" target="_blank">Перейти</a></p>
+                        {% endif %}
+                    </td>
+                    <td class="align-middle">
+                        {% if partner.address %}
+                            {{ partner.address|linebreaks }}
+                        {% endif %}
+                    </td>
+                    <td class="text-center align-middle">
+                        {% if partner.yandex_map %}
+                            <a href="{{ partner.yandex_map }}" target="_blank" class="btn btn-primary btn-sm">
+                                <i class="fas fa-map-marked-alt"></i> На карте
+                            </a>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="5" class="text-center">Партнеры не найдены</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
