@@ -68,3 +68,8 @@ class ContactsView(View):
     template_name = 'houses/contacts.html'  # Укажите путь к вашему шаблону
     def get(self, request):
         return render(request, self.template_name)
+
+class InfoView(View):
+    template_name = 'houses/info_company.html'
+    def get(self, request):
+        return render(request, self.template_name)
