@@ -1,0 +1,62 @@
+{% extends 'houses/base.html' %}
+{% load static %}
+{% block title %}Главная{% endblock %}
+{% block content %}
+<div class="container main-container">
+    <div class="row hero-section">
+        <!-- Текст слева -->
+        <div class="col-md-5 hero-text">
+            <h1 class="hero-title">
+                Специализируемся на продаже земельных участков в районах Подмосковья с хорошей экологией и инфраструктурой
+            </h1>
+            <p class="hero-subtitle">Рассрочка 0% до 6 месяцев.</p>
+        </div>
+
+        <!-- Картинка справа -->
+        <div class="col-md-7 hero-image">
+            <img src="{% static 'images/main_image.jpg' %}" class="img-fluid" alt="Земельные участки в Подмосковье">
+        </div>
+    </div>
+
+    <div class="row about-section" style="padding-top: 20px">
+        <!-- Левая колонка с текстом -->
+        <div class="col-md-5 about-text">
+            <h2 class="about-title">
+                Почему именно <span class="highlight">Земля МО</span>
+            </h2>
+            <p class="about-description">
+                Наши проекты — это современные коттеджные поселки премиум-класса в Московской области. К ним удобно
+                добраться по современной скоростной трассе М4.
+                <br><br>
+                Широкие асфальтовые дороги, уличное освещение, детские и спортивные площадки в окружении красивой
+                природы позволяют сочетать городской уровень комфорта со свободой загородной жизни.
+            </p>
+        </div>
+
+        <!-- Правая колонка с галереей -->
+        <div class="col-md-7 gallery-wrapper">
+            <div class="gallery-container"
+                 data-images='["{% static 'images/school.png' %}",
+                              "{% static 'images/river.jpg' %}",
+                              "{% static 'images/shop.png' %}",
+                              "{% static 'images/temple.png' %}"]'
+                 data-descriptions='["ОБУСТРОЙСТВО: Сады, Школы, Детские площадки",
+                                    "РАСПОЛОЖЕНИЕ: Уникальные природные локации около Москвы",
+                                    "ИНФРАСТРУКТУРА: Магазины, Ozon, Wildberries",
+                                    "ИСТОРИЧЕСКОЕ НАСЛЕДИЕ: Памятники культуры, родники, храмы"]'>
+                <div class="image-container">
+                    <img id="current-image" src="{% static 'images/school.png' %}" alt="Фото проекта">
+                    <div class="description-overlay">
+                        <p class="description-text" id="image-description"></p>
+                    </div>
+                    <button id="prev-btn" class="nav-btn" aria-label="Предыдущее изображение"><</button>
+                    <button id="next-btn" class="nav-btn" aria-label="Следующее изображение">></button>
+                    <div class="image-counter">
+                        <span id="current-index">1</span>/<span id="total-images">4</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

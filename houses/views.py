@@ -73,3 +73,8 @@ class InfoView(View):
     template_name = 'houses/info_company.html'
     def get(self, request):
         return render(request, self.template_name)
+
+class IndexView(View):
+    template_name = 'houses/index.html'
+    def get(self, request):
+        return render(request, self.template_name)

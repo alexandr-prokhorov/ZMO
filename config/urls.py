@@ -22,7 +22,7 @@ from django.conf.urls.static import static
 
 
 def redirect_to_houses(request):
-    return redirect('house-list')  # Перенаправляем на список домов
+    return redirect('index')  # Перенаправляем на список домов
 
 
 urlpatterns = [
