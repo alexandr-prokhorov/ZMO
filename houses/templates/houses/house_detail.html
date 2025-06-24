@@ -1,5 +1,4 @@
 {% extends 'houses/base.html' %}
-
 {% block title %}{{ house.name }}{% endblock %}
 
 {% block content %}
@@ -23,6 +22,8 @@
         </div>
     </div>
 </div>
+
+
 <div class="container-fluid bg-dark text-white py-1">
     <div class="row justify-content-center g-4">
         <div class="col-md-2 col-6">
@@ -68,52 +69,60 @@
         </div>
     </div>
 </div>
-<div class="my-5 py-3">
+
+<div class="my-5 py-3 container">
     <h2 style="font-size: 2rem;">Описание</h2>
     <div>
         <p>{{ house.description|linebreaks }}</p>
     </div>
 </div>
-<div class="plans-section mt-5 text-center">
-    <h3 class="mb-4" style="font-size: 2rem;">Планы и фасады дома</h3>
 
-    <div id="plans-container" class="row plans-large-text">
-        {% include 'houses/_plans_partial.html' %}
+<!-- Галерея планов дома -->
+<div class="plans-section mt-5 container-fluid px-0">
+    <h3 class="mb-4 text-center" style="font-size: 2rem;">Планы и фасады дома</h3>
+
+    <div class="gallery-container"
+     id="plans-gallery"
+     data-plans='[
+         {% for plan in house.houseplan_set.all %}
+         {"image": "{{ plan.plan_image.url }}"}{% if not forloop.last %},{% endif %}
+         {% endfor %}
+     ]'>
+        <div class="image-container">
+            {% if house.houseplan_set.all %}
+                {% with first_plan=house.houseplan_set.first %}
+                    <img id="current-plan" src="{{ first_plan.plan_image.url }}" alt="План дома">
+                {% endwith %}
+
+                {% if house.houseplan_set.count > 1 %}
+                    <button id="prev-plan" class="nav-btn" aria-label="Предыдущий план">‹</button>
+                    <button id="next-plan" class="nav-btn" aria-label="Следующий план">›</button>
+                    <div class="image-counter">
+                        <span id="current-plan-index">1</span>/<span id="total-plans">{{ house.houseplan_set.count }}</span>
+                    </div>
+                {% endif %}
+            {% else %}
+                <div class="d-flex align-items-center justify-content-center" style="height: 500px;">
+                    <p class="text-muted">Планы дома отсутствуют</p>
+                </div>
+            {% endif %}
+        </div>
     </div>
 </div>
-<div>
-    <nav aria-label="Plans pagination">
-        <ul class="pagination justify-content-center">
-            {% if plans_page_obj.has_previous %}
-            <li class="page-item">
-                <a class="page-link paginate-btn"
-                   href="#"
-                   data-page="{{ plans_page_obj.previous_page_number }}">
-                    &laquo;
-                </a>
-            </li>
-            {% endif %}
 
-            {% for num in plans_page_obj.paginator.page_range %}
-            <li class="page-item {% if plans_page_obj.number == num %}active{% endif %}">
-                <a class="page-link paginate-btn"
-                   href="#"
-                   data-page="{{ num }}">
-                    {{ num }}
-                </a>
-            </li>
-            {% endfor %}
-
-            {% if plans_page_obj.has_next %}
-            <li class="page-item">
-                <a class="page-link paginate-btn"
-                   href="#"
-                   data-page="{{ plans_page_obj.next_page_number }}">
-                    &raquo;
-                </a>
-            </li>
-            {% endif %}
-        </ul>
-    </nav>
+<!-- Галерея дополнительных изображений -->
+<div class="mt-5 container">
+    <h3 class="mb-4 text-center" style="font-size: 2rem;">Фотогалерея</h3>
+    <div class="row">
+        {% for image in house.houseimage_set.all %}
+            <div class="col-md-4 mb-4">
+                <img src="{{ image.images.url }}" class="img-fluid rounded" alt="Фото дома">
+            </div>
+        {% empty %}
+            <div class="col-12 text-center py-4">
+                <p class="text-muted">Дополнительные фотографии отсутствуют</p>
+            </div>
+        {% endfor %}
+    </div>
 </div>
 {% endblock %}

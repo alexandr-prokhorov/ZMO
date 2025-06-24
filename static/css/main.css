@@ -111,12 +111,54 @@
 }
 
 /* ===== ТЕКСТ В ГАЛЕРЕЕ ===== */
+/* ===== НОВЫЕ СТИЛИ ДЛЯ АННОТАЦИИ ===== */
+.description-overlay {
+  position: absolute;
+  bottom: -20px; /* Выходит за нижнюю границу */
+  left: -20px; /* Выходит за левую границу */
+  max-width: 80%; /* Можно регулировать */
+  background: rgba(0, 0, 0, 0.85); /* Более темный фон */
+  padding: 25px 30px 25px 25px;
+  z-index: 20;
+  backdrop-filter: blur(5px);
+  border-top-right-radius: 12px;
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
+}
+
 .description-text {
+  color: white;
   font-family: var(--font-accent);
   font-size: 1.15rem;
   line-height: 1.6;
   font-weight: 500;
   letter-spacing: 0.3px;
+  margin: 0;
+  position: relative;
+}
+
+/* Декоративный уголок */
+.description-overlay::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(135deg, transparent 50%, rgba(0,0,0,0.85) 50%);
+}
+
+@media (max-width: 768px) {
+  .description-overlay {
+    bottom: -10px;
+    left: -10px;
+    padding: 15px 20px 15px 15px;
+    max-width: 90%;
+  }
+
+  .description-text {
+    font-size: 1rem;
+  }
 }
 
 /* ===== АДАПТИВНЫЕ ПРАВКИ ===== */
@@ -135,9 +177,7 @@
   }
 }
 
-/* ============ ГАЛЕРЕЯ (ИСПРАВЛЕННАЯ ВЕРСИЯ) ============ */
-
-/* Основные стили галереи остаются без изменений */
+/* ============ ГАЛЕРЕЯ (ФИНАЛЬНАЯ ВЕРСИЯ) ============ */
 .gallery-container {
   position: relative;
   width: 100%;
@@ -155,7 +195,7 @@
   position: relative;
   width: 100%;
   height: 0;
-  padding-bottom: 75%;
+  padding-bottom: 75%; /* Соотношение 4:3 */
   overflow: hidden;
 }
 
@@ -166,10 +206,9 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-/* Кнопки навигации (исправленные) */
+/* Кнопки навигации (всегда видимые) */
 .nav-btn {
   position: absolute;
   top: 50%;
@@ -183,21 +222,23 @@
   font-size: 1.5rem;
   font-weight: bold;
   cursor: pointer;
-  display: flex;
+  display: flex !important; /* Перекрываем возможные display: none */
   align-items: center;
   justify-content: center;
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
   transition: all 0.3s ease;
-  z-index: 30; /* Увеличено z-index */
-  opacity: 0;
+  z-index: 30;
+  opacity: 1 !important; /* Принудительно делаем видимым */
+  visibility: visible !important; /* Дополнительная гарантия */
+  pointer-events: auto !important; /* Разрешаем взаимодействие */
 }
 
-.gallery-container:hover .nav-btn {
-  opacity: 1;
+.gallery-container .nav-btn {
+  opacity: 1 !important;
 }
 
 .nav-btn:hover {
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.9);
   transform: translateY(-50%) scale(1.1);
 }
 
@@ -209,7 +250,7 @@
   right: 20px;
 }
 
-/* Описание изображения (исправленное) */
+/* Аннотация (всегда видимая) */
 .description-overlay {
   position: absolute;
   bottom: 0;
@@ -217,14 +258,9 @@
   right: 0;
   background: rgba(0, 0, 0, 0.7);
   padding: 20px 30px;
-  z-index: 20; /* z-index меньше чем у кнопок */
+  z-index: 20;
   backdrop-filter: blur(8px);
-  transform: translateY(100%);
-  transition: transform 0.3s ease;
-}
-
-.gallery-container:hover .description-overlay {
-  transform: translateY(0);
+  transform: translateY(0); /* Убрано скрытие */
 }
 
 .description-text {
@@ -238,7 +274,7 @@
 /* Счетчик изображений */
 .image-counter {
   position: absolute;
-  bottom: 20px;
+  bottom: 80px; /* Поднят над аннотацией */
   right: 20px;
   background: rgba(0, 0, 0, 0.8);
   color: white;
@@ -246,7 +282,7 @@
   border-radius: 20px;
   font-size: 0.9rem;
   font-weight: 500;
-  z-index: 25; /* Между кнопками и описанием */
+  z-index: 25;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -256,7 +292,7 @@
     width: 40px;
     height: 40px;
     font-size: 1.2rem;
-    opacity: 1; /* Всегда видим на мобильных */
+    opacity: 1 !important;
   }
 
   .description-overlay {
@@ -266,5 +302,9 @@
   .description-text {
     font-size: 1rem;
     max-width: 100%;
+  }
+
+  .image-counter {
+    bottom: 70px;
   }
 }
