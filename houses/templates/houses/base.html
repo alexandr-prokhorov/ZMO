@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Земля МО{% endblock %}</title>
-    <!-- Bootstrap 5 -->
+
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
     <link href="{% static 'css/album.css' %}" rel="stylesheet">
     <link href="{% static 'css/style.css' %}" rel="stylesheet">
@@ -17,14 +17,13 @@
     {% block extra_head %}{% endblock %}
 </head>
 <body>
-<!-- Фиксированная шапка сайта -->
+
 <header class="fixed-header bg-light py-3">
-    <!-- Фоновое изображение (z-index: 0) -->
+
     <div class="position-absolute top-0 start-0 w-100 h-100"
          style="background: url('{% static 'images/head.png' %}') repeat-x bottom left; z-index: 0;">
     </div>
 
-    <!-- Основное содержимое (z-index: 1) -->
     <div class="container position-relative" style="z-index: 1; margin-bottom: -10px;">
         <nav>
             <ul class="nav justify-content-center">
@@ -64,12 +63,11 @@
 
 <main class="container my-5">
     {% block content %}
-    <!-- Сюда подставляется контент из дочерних шаблонов -->
     {% endblock %}
     <div class="py-4 my-4 px-3" style="background-color: rgba(0,0,0,0.03); border-radius: 8px; overflow: hidden;">
         <h1 class="text-center mb-4">Специальные предложения и условия</h1>
-        <div class="row justify-content-center gx-3 gy-4">  <!-- Изменил g-4 на gx-3 gy-4 -->
-            <!-- Скидка -->
+        <div class="row justify-content-center gx-3 gy-4">
+
             <div class="col-md-4 col-sm-6">
                 <div class="p-3 h-100 text-center"
                      style="background-color: rgba(255,255,255,0.9); border-radius: 6px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);">
@@ -78,7 +76,6 @@
                 </div>
             </div>
 
-            <!-- Рассрочка -->
             <div class="col-md-4 col-sm-6">
                 <div class="p-3 h-100 text-center"
                      style="background-color: rgba(255,255,255,0.9); border-radius: 6px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);">
@@ -87,7 +84,6 @@
                 </div>
             </div>
 
-            <!-- Ипотека -->
             <div class="col-md-4 col-sm-6">
                 <div class="p-3 h-100 text-center"
                      style="background-color: rgba(255,255,255,0.9); border-radius: 6px; box-shadow: 0 1px 4px rgba(0,0,0,0.08);">
@@ -117,7 +113,6 @@
     </div>
 </main>
 
-<!-- Подвал -->
 <footer class="bg-dark text-white py-4 mt-5">
     <div class="container text-center">
         <p>&copy; 2025 Земля МО. Все права защищены.</p>

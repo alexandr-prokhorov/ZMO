@@ -10,7 +10,7 @@ class PartnersAdmin(admin.ModelAdmin):
     search_fields = ('name', 'address')
     ordering = ('name',)
     list_per_page = 20
-    readonly_fields = ('display_svg_preview',)  # Для страницы редактирования
+    readonly_fields = ('display_svg_preview',)
 
     def display_svg_image(self, obj):
         if obj.image:

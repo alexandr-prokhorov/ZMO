@@ -74,7 +74,7 @@ class HouseImageView(ListView):
     ordering = ['order']
 
 class ContactsView(View):
-    template_name = 'houses/contacts.html'  # Укажите путь к вашему шаблону
+    template_name = 'houses/contacts.html'
     def get(self, request):
         return render(request, self.template_name)
 
