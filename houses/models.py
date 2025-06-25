@@ -42,7 +42,7 @@ class HousePlan(models.Model):
 class HouseImage(models.Model):
 
     house = models.ForeignKey(House, on_delete=models.CASCADE, verbose_name='Дом')
-    images = models.ImageField(upload_to='house_images/', **NULLABLE, verbose_name='Изображение')
+    image = models.ImageField(upload_to='house_images/', **NULLABLE, verbose_name='Изображение')
     order = models.PositiveIntegerField(default=0, verbose_name='Порядок сортировки')
 
     class Meta:
@@ -51,5 +51,5 @@ class HouseImage(models.Model):
         ordering = ['order']
 
     def __str__(self):
-        return f'Фото {self.images.name} (#{self.order})'
+        return f'Фото {self.image.name} (#{self.order})'
 

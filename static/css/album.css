@@ -52,3 +52,16 @@ footer p {
     text-decoration: none !important;
     outline: none !important;
 }
+
+/* Для всего блока описания */
+.house-description-container p {
+    font-size: 1.5rem !important;
+    line-height: 1.6 !important;
+    font-family: inherit !important;
+}
+
+/* Для заголовка */
+.house-description-container h2 {
+    font-size: 2rem !important;
+    margin-bottom: 1.5rem !important;
+}

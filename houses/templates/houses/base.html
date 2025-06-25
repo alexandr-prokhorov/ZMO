@@ -12,6 +12,7 @@
     <link href="{% static 'css/style2.css' %}" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
     <link rel="stylesheet" href="{% static 'css/plans.css' %}">
+    <link rel="stylesheet" href="{% static 'css/house_galleries.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     {% block extra_head %}{% endblock %}
 </head>
@@ -129,6 +130,9 @@
 <script src="{% static 'js/script.js'%}"></script>
 <script src="{% static 'js/gallery.js' %}"></script>
 <script src="{% static 'js/gallery_plans.js' %}"></script>
-{% block scripts %}{% endblock %}
+<script src="{% static 'js/house_galleries.js' %}"></script>
+{% block scripts %}
+<script src="{% static 'js/house_galleries.js' %}"></script>
+{% endblock %}
 </body>
 </html>

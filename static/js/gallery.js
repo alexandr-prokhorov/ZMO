@@ -44,3 +44,4 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('total-images').textContent = images.length;
     updateImage();
 });
+

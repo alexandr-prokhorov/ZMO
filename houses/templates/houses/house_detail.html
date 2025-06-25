@@ -1,4 +1,5 @@
 {% extends 'houses/base.html' %}
+{% load static %}
 {% block title %}{{ house.name }}{% endblock %}
 
 {% block content %}
@@ -69,7 +70,36 @@
         </div>
     </div>
 </div>
+<!-- Галерея дополнительных изображений -->
+<div class="images-section mt-5 container-fluid px-0">
+    <div class="gallery-container"
+         id="images-gallery"
+         data-images='[
+             {% for image in house.houseimage_set.all %}
+             {"image": "{{ image.image.url }}"}{% if not forloop.last %},{% endif %}
+             {% endfor %}
+         ]'>
+        <div class="image-container">
+            {% if house.houseimage_set.all %}
+            {% with first_image=house.houseimage_set.first %}
+            <img id="current-image" src="{{ first_image.image.url }}" alt="Фото дома">
+            {% endwith %}
 
+            {% if house.houseimage_set.count > 1 %}
+            <button id="prev-image" class="nav-btn" aria-label="Предыдущее фото">‹</button>
+            <button id="next-image" class="nav-btn" aria-label="Следующее фото">›</button>
+            <div class="image-counter">
+                <span id="current-image-index">1</span>/<span id="total-images">{{ house.houseimage_set.count }}</span>
+            </div>
+            {% endif %}
+            {% else %}
+            <div class="d-flex align-items-center justify-content-center" style="height: 500px;">
+                <p class="text-muted">Фотографии отсутствуют</p>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
 <div class="my-5 py-3 container">
     <h2 style="font-size: 2rem;">Описание</h2>
     <div>
@@ -82,47 +112,33 @@
     <h3 class="mb-4 text-center" style="font-size: 2rem;">Планы и фасады дома</h3>
 
     <div class="gallery-container"
-     id="plans-gallery"
-     data-plans='[
+         id="plans-gallery"
+         data-plans='[
          {% for plan in house.houseplan_set.all %}
          {"image": "{{ plan.plan_image.url }}"}{% if not forloop.last %},{% endif %}
          {% endfor %}
      ]'>
         <div class="image-container">
             {% if house.houseplan_set.all %}
-                {% with first_plan=house.houseplan_set.first %}
-                    <img id="current-plan" src="{{ first_plan.plan_image.url }}" alt="План дома">
-                {% endwith %}
+            {% with first_plan=house.houseplan_set.first %}
+            <img id="current-plan" src="{{ first_plan.plan_image.url }}" alt="План дома">
+            {% endwith %}
 
-                {% if house.houseplan_set.count > 1 %}
-                    <button id="prev-plan" class="nav-btn" aria-label="Предыдущий план">‹</button>
-                    <button id="next-plan" class="nav-btn" aria-label="Следующий план">›</button>
-                    <div class="image-counter">
-                        <span id="current-plan-index">1</span>/<span id="total-plans">{{ house.houseplan_set.count }}</span>
-                    </div>
-                {% endif %}
+            {% if house.houseplan_set.count > 1 %}
+            <button id="prev-plan" class="nav-btn" aria-label="Предыдущий план">‹</button>
+            <button id="next-plan" class="nav-btn" aria-label="Следующий план">›</button>
+            <div class="image-counter">
+                <span id="current-plan-index">1</span>/<span id="total-plans">{{ house.houseplan_set.count }}</span>
+            </div>
+            {% endif %}
             {% else %}
-                <div class="d-flex align-items-center justify-content-center" style="height: 500px;">
-                    <p class="text-muted">Планы дома отсутствуют</p>
-                </div>
+            <div class="d-flex align-items-center justify-content-center" style="height: 500px;">
+                <p class="text-muted">Планы дома отсутствуют</p>
+            </div>
             {% endif %}
         </div>
     </div>
 </div>
 
-<!-- Галерея дополнительных изображений -->
-<div class="mt-5 container">
-    <h3 class="mb-4 text-center" style="font-size: 2rem;">Фотогалерея</h3>
-    <div class="row">
-        {% for image in house.houseimage_set.all %}
-            <div class="col-md-4 mb-4">
-                <img src="{{ image.images.url }}" class="img-fluid rounded" alt="Фото дома">
-            </div>
-        {% empty %}
-            <div class="col-12 text-center py-4">
-                <p class="text-muted">Дополнительные фотографии отсутствуют</p>
-            </div>
-        {% endfor %}
-    </div>
-</div>
 {% endblock %}
+
