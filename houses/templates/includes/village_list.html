@@ -1,0 +1,28 @@
+<div class="row villages-section mt-5">
+    <div class="col-12">
+        <h2 class="about-title mb-4">Наши поселки</h2>
+        <div class="row">
+            {% for village in villages %}
+            <div class="col-md-6 mb-4">
+                <a href="{% url 'village-detail' village.pk %}" class="card clickable-card" style="
+                        background-image: url('{{ village.preview_image.url }}');
+                        background-size: cover;
+                        background-position: center;
+                        height: 400px;
+                        color: white;
+                        text-decoration: none;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: flex-end;
+                    ">
+                        <div style="background: rgba(0, 0, 0, 0.5); padding: 1rem;">
+                            <h5 class="card-title">{{ village.name }}</h5>
+                            <p class="card-text">от {{ village.price }} руб./сотка </p>
+                            <p class="card-text">{{ village.distance_mkad }} км от МКАД</p>
+                        </div>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

@@ -33,7 +33,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark fw-bold" href="#contacts">ПОСЕЛКИ</a>
+                    <a class="nav-link text-dark fw-bold" href="{% url 'village_list' %}">ПОСЕЛКИ</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-dark fw-bold" href="{% url 'house-list' %}">ГОТОВЫЕ ДОМА</a>
@@ -104,7 +104,7 @@
     </a>
     <div>
         <a class="nav-link" href="{% url 'index' %}">Главная</a>
-        <a class="nav-link" href="#projects">Поселки</a>
+        <a class="nav-link" href="{% url 'village_list' %}">Поселки</a>
         <a class="nav-link" href="{% url 'house-list' %}">Готовые дома</a>
         <a class="nav-link" href="{% url 'info_company' %}">О компании</a>
         <a class="nav-link" href="{% url 'partners_list' %}">Оформление</a>

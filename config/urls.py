@@ -30,6 +30,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('houses/', include('houses.urls')),
     path('partners/', include('partners.urls')),
+    path('villages/', include('villages.urls')),
 ]
 
 if settings.DEBUG:

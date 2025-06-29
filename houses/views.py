@@ -8,6 +8,7 @@ from django.template.loader import render_to_string
 from houses.models import House, HousePlan, HouseImage
 from django.views import View
 from django.shortcuts import render
+from villages.models import Village
 
 
 class PaginatedPlansMixin:
@@ -83,7 +84,14 @@ class InfoView(View):
     def get(self, request):
         return render(request, self.template_name)
 
+
 class IndexView(View):
     template_name = 'houses/index.html'
+
     def get(self, request):
-        return render(request, self.template_name)
+        villages = Village.objects.all()
+        context = {
+            'villages': villages,
+            # другие переменные если нужно
+        }
+        return render(request, self.template_name, context)

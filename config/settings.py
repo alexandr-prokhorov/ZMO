@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     # Мои приложения.
     'users',
     'houses',
-    'partners'
+    'partners',
+    'villages'
 ]
 
 MIDDLEWARE = [
