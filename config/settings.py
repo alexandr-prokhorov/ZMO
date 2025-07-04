@@ -22,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-!heh6zyhd^lrn*qbic3lus1zws$(gs4b(qpwo+4t-xpq^$si*z'
+SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -103,6 +103,23 @@ DATABASES = {
     }
 }
 
+#DOCKER
+# database_name = os.getenv('POSTGRES_DATABASE_DOCKER')
+# database_user = os.getenv('POSTGRESQL_USER')
+# database_password = os.getenv('POSTGRES_PASSWORD_DOCKER')
+# database_port = os.getenv('POSTGRESQL_PORT_DOCKER')
+# database_host = os.getenv('POSTGRESQL_HOST_DOCKER', 'localhost')  # Установите значение по умолчанию
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': database_name,
+#         'USER': database_user,
+#         'PASSWORD': database_password,
+#         'HOST': database_host,
+#         'PORT': database_port,
+#     }
+# }
+
 
 
 # Password validation
@@ -150,6 +167,17 @@ MEDIA_ROOT = (
         BASE_DIR / 'media'
 )
 
+STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
+
+if os.getenv('DOCKER_DEVELOPMENT') == 'true':
+    # Настройки для Docker/production
+    STATIC_ROOT = '/code/staticfiles'  # Куда collectstatic соберет файлы
+    MEDIA_ROOT = '/code/media/'
+else:
+    # Настройки для локальной разработки
+    STATICFILES_DIRS = [BASE_DIR / 'static']
+    MEDIA_ROOT = BASE_DIR / 'media'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
