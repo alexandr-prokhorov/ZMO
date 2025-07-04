@@ -1,5 +1,5 @@
 .clickable-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /*transition: transform 0.3s ease, box-shadow 0.3s ease;*/
     cursor: pointer;
 }
 
@@ -11,7 +11,7 @@
 }
 
 .plan-item .card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /*transition: transform 0.3s ease, box-shadow 0.3s ease;*/
 }
 
 .plan-item .card:hover {

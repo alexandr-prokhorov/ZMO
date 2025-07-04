@@ -10,6 +10,7 @@
     <link href="{% static 'css/album.css' %}" rel="stylesheet">
     <link href="{% static 'css/style.css' %}" rel="stylesheet">
     <link href="{% static 'css/style2.css' %}" rel="stylesheet">
+    <link href="{% static 'css/style_menu.css' %}" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
     <link rel="stylesheet" href="{% static 'css/plans.css' %}">
     <link rel="stylesheet" href="{% static 'css/house_galleries.css' %}">
@@ -19,44 +20,54 @@
 <body>
 
 <header class="fixed-header bg-light py-3">
-
     <div class="position-absolute top-0 start-0 w-100 h-100"
          style="background: url('{% static 'images/head.png' %}') repeat-x bottom left; z-index: 0;">
     </div>
 
-    <div class="container position-relative" style="z-index: 1; margin-bottom: -10px;">
-        <nav>
-            <ul class="nav justify-content-center">
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'index' %}">
-                        <img src="{% static 'images/logo.png' %}" alt="Логотип" style="height: 40px;">
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-dark fw-bold" href="{% url 'village_list' %}">ПОСЕЛКИ</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-dark fw-bold" href="{% url 'house-list' %}">ГОТОВЫЕ ДОМА</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-dark fw-bold" href="{% url 'info_company' %}">О КОМПАНИИ</a>
-                </li>
+    <div class="container position-relative" style="z-index: 1;">
+        <nav class="navbar navbar-expand-lg p-0">
+            <div class="container-fluid px-0">
+                <!-- Логотип -->
+                <a class="navbar-brand me-3" href="{% url 'index' %}" style="padding-right: 60px">
+                    <img src="{% static 'images/logo.png' %}" alt="Логотип" style="height: 40px;">
+                </a>
 
-                <li class="nav-item">
-                    <a class="nav-link text-dark fw-bold" href="{% url 'partners_list' %}">ОФОРМЛЕНИЕ</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-dark fw-bold" href="{% url 'contacts' %}">КОНТАКТЫ</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="https://t.me/+79268438363">
-                        <img src="{% static 'images/telegram.png' %}" alt="Логотип" style="height: 30px;">
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <p>+7 (926) 843 83 63</p>
-                </li>
-            </ul>
+                <!-- Кнопка бургера (теперь она будет видна) -->
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Основное меню -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="padding-right: 60px">
+                        <li class="nav-item" style="padding-right: 20px">
+                            <a class="nav-link text-dark fw-bold px-2" href="{% url 'village_list' %}">ПОСЕЛКИ</a>
+                        </li>
+                        <li class="nav-item" style="padding-right: 20px">
+                            <a class="nav-link text-dark fw-bold px-2" href="{% url 'house-list' %}">ГОТОВЫЕ ДОМА</a>
+                        </li>
+                        <li class="nav-item" style="padding-right: 20px">
+                            <a class="nav-link text-dark fw-bold px-2" href="{% url 'info_company' %}">О КОМПАНИИ</a>
+                        </li>
+                        <li class="nav-item" style="padding-right: 20px">
+                            <a class="nav-link text-dark fw-bold px-2" href="{% url 'partners_list' %}">ОФОРМЛЕНИЕ</a>
+                        </li>
+                        <li class="nav-item" style="padding-right: 20px">
+                            <a class="nav-link text-dark fw-bold px-2" href="{% url 'contacts' %}">КОНТАКТЫ</a>
+                        </li>
+                    </ul>
+
+                    <!-- Контакты справа -->
+                    <div class="d-flex align-items-center">
+                        <a class="nav-link px-2" href="https://t.me/+79268438363">
+                            <img src="{% static 'images/telegram.png' %}" alt="Telegram" style="height: 30px;">
+                        </a>
+                        <span class="nav-link text-dark px-2">+7 (926) 843 83 63</span>
+                    </div>
+                </div>
+            </div>
         </nav>
     </div>
 </header>
@@ -119,6 +130,7 @@
 <script src="{% static 'js/gallery_plans.js' %}"></script>
 <script src="{% static 'js/house_galleries.js' %}"></script>
 {% block scripts %}
+<script src="{% static 'js/script_menu.js' %}"></script>
 <script src="{% static 'js/house_galleries.js' %}"></script>
 {% endblock %}
 </body>
