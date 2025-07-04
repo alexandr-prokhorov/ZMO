@@ -1,0 +1,569 @@
+[
+  {
+    "model": "houses.house",
+    "pk": 1,
+    "fields": {
+      "name": "Проект Марсель 203 м²",
+      "preview_image": "house_cards/марсель_промо.jpg",
+      "price": "от 8,7 млн. ₽",
+      "size": "Габариты: 9 800 x 10 950",
+      "photo_house": "houses/марсель_фото_2.jpg",
+      "floor": 2,
+      "total_area": "203 м²",
+      "bedroom": 5,
+      "bathroom": 2,
+      "living_room_area": "32 м²",
+      "terrace_count": 1,
+      "description": "Проект “Марсель 203 м2” представляет собой комфортабельный двухэтажный дом выполненный в европейском стиле.\r\n\r\nРазработка проекта была доверена опытным архитекторам, поэтому результат получился таким продуманным!\r\n\r\nОбщая строительная площадь - 203 квадратных метра.\r\n\r\nПланировка первого этажа предусматривает просторную гостиную 26,97 кв.м. совмещенную со столовой, кухню 10,25 кв.м., 2 спальни, санузел, холл и отдельное помещение под бойлерную. На втором этаже располагаются 3 спальни, гардеробная и 2 санузла.\r\n\r\nЛетом можно устроить барбекю или просто позагорать на большой террасе 15 кв.м.\r\n\r\nПри покупке проекта “Марсель 203 м2” вы можете выбрать строительство “под отделку” или строительство “под ключ”.\r\n\r\nМы используем только самые качественные материалы, что обеспечивает высокую надежность и долгий срок эксплуатации."
+    }
+  },
+  {
+    "model": "houses.house",
+    "pk": 2,
+    "fields": {
+      "name": "Проект Пегас 146 м²",
+      "preview_image": "house_cards/пегас_1.jpg",
+      "price": "от 7,8 млн. ₽",
+      "size": "Габариты: 8 900 x 17 500",
+      "photo_house": "houses/пегас_1.jpg",
+      "floor": 1,
+      "total_area": "146 м²",
+      "bedroom": 3,
+      "bathroom": 2,
+      "living_room_area": "39 м²",
+      "terrace_count": 1,
+      "description": "Проект “Пегас 146 м2” создан в стиле Райта с минимализмом. Простые линии, минимум декора, легкость и естественность - вот основные принципы данного стиля. Для фасада здания используются натуральные материалы, такие как камень и дерево.\r\n\r\nРазработка проекта была доверена опытным архитекторам, поэтому результат получился таким продуманным!\r\n\r\nОбщая строительная площадь - 146 квадратных метров.\r\n\r\nПланировка предусматривает просторную гостиную 29,41 квадратных метра совмещенную с кухней 9,72 квадратных метра. 3 спальни, 2 санузла, отдельное помещение под бойлерную, 2 тамбура и кладовая.\r\n\r\nЛетом можно устроить барбекю или просто позагорать на собственной террасе 17,10 квадратных метра. А автовладельцев порадует большой гараж 19,80 кв.м. в который можно попасть прямо из дома, не выходя на улицу.\r\n\r\nПри покупке проекта “Пегас 146 м2” вы можете выбрать строительство “под отделку” или строительство “под ключ”.\r\n\r\nМы используем только самые качественные материалы, что обеспечивает высокую надежность и долгий срок эксплуатации."
+    }
+  },
+  {
+    "model": "houses.house",
+    "pk": 3,
+    "fields": {
+      "name": "Проект Клер 130,5 м²",
+      "preview_image": "house_cards/Клер_1.jpg",
+      "price": "от 7,5 млн. ₽",
+      "size": "Габариты: 9 600 x 13 600",
+      "photo_house": "houses/Клер_1.jpg",
+      "floor": 1,
+      "total_area": "135,5 м²",
+      "bedroom": 3,
+      "bathroom": 3,
+      "living_room_area": "32 м²",
+      "terrace_count": 1,
+      "description": "Проект “Клер 130,5 м2” вдохновлен стилем легендарного американского архитектора Фрэнка Ллойда Райта и минимализмом. Мы стремились убрать все ненужные детали, избавиться от “захламленности”, сделать пространство как можно более функциональным, а также использовать натуральные материалы и единую цветовую гамму.\r\n\r\nРазработка проекта была доверена опытным архитекторам, поэтому результат получился таким продуманным!\r\n\r\nОбщая строительная площадь - 130,5 квадратных метра.\r\n\r\nПланировка предусматривает просторную гостиную 21,32 квадратных метра совмещенную с кухней 10,44 квадратных метра, 3 комнаты, одна из которых имеет собственную кладовую и санузел, отдельное помещение под бойлерную, тамбур, гардероб и 3 санузла (включая тот, что в комнате).\r\n\r\nЛетом можно устраивать чаепития или барбекю вечеринки в кругу друзей или родных на террасе 23,45 кв.м.\r\n\r\nПри покупке проекта “Клер 130,5 м2” вы можете выбрать строительство “под отделку” или строительство “под ключ”.\r\n\r\nМы используем только самые качественные материалы, что обеспечивает высокую надежность и долгий срок эксплуатации."
+    }
+  },
+  {
+    "model": "houses.house",
+    "pk": 4,
+    "fields": {
+      "name": "Проект Саваж 139 м²",
+      "preview_image": "house_cards/саваж_1.jpg",
+      "price": "от 7.8 млн. ₽",
+      "size": "Габариты: 11 100 x 13 500",
+      "photo_house": "houses/саваж_1.jpg",
+      "floor": 1,
+      "total_area": "139 м²",
+      "bedroom": 3,
+      "bathroom": 2,
+      "living_room_area": "44 м²",
+      "terrace_count": 2,
+      "description": "Проект “Саваж 139 м2” вдохновлен стилем легендарного американского архитектора Фрэнка Ллойда Райта, который создал \"органическую архитектуру\". Простые линии, минимум декора, легкость и естественность - вот основные принципы этого стиля. Для фасада используются натуральные материалы, такие как камень и дерево.\r\n\r\nПроектирование было доверено опытному архитектору, поэтому результат получился таким продуманным!\r\n\r\nОбщая площадь составляет 139 квадратных метров.\r\n\r\nПланировкой предусмотрено просторная гостиная площадью 27,84 кв.м. совмещенная с кухней 13,80 кв.м. 3 спальные комнаты, гардеробная 4,12 кв.м., 2 санузла, постирочная и большая терраса 18,07 кв.м.\r\n\r\nЕсли вы заинтересованы в приобретении проекта “Саваж” площадью 139 м2, вы можете выбрать строительство \"под ключ\" или строительство “под отделку”.\r\n\r\nДля обеспечения высокой надежности и долговечности используются только самые качественные материалы."
+    }
+  },
+  {
+    "model": "houses.house",
+    "pk": 5,
+    "fields": {
+      "name": "Проект Хилтон 134 м²",
+      "preview_image": "house_cards/хилтон_1.jpg",
+      "price": "от 6,7 млн. ₽",
+      "size": "Габариты: 9 900 x 13 600",
+      "photo_house": "houses/хилтон_1.jpg",
+      "floor": 1,
+      "total_area": "134,6 м²",
+      "bedroom": 4,
+      "bathroom": 2,
+      "living_room_area": "40 м²",
+      "terrace_count": 2,
+      "description": "Проект “Хилтон 134 м2” вдохновлен стилем легендарного американского архитектора Фрэнка Ллойда Райта и минимализмом. Мы стремились убрать все ненужные детали, избавиться от “захламленности”, сделать пространство как можно более функциональным, а также использовать натуральные материалы и единую цветовую гамму.\r\n\r\nРазработка проекта была доверена опытным архитекторам, поэтому результат получился таким продуманным!\r\n\r\nОбщая строительная площадь - 134 квадратных метра.\r\n\r\nПланировка предусматривает просторную гостиную 30,13 квадратных метров совмещенную с кухней 9,66 квадратных метра, 4 комнаты, 2 санузла, отдельную котельную и террасу 15 кв.м.\r\n\r\nПри покупке проекта “Хилтон 134 м2” вы можете выбрать строительство “под отделку” или строительство “под ключ”.\r\n\r\nМы используем только самые качественные материалы, что обеспечивает высокую надежность и долгий срок эксплуатации."
+    }
+  },
+  {
+    "model": "houses.house",
+    "pk": 6,
+    "fields": {
+      "name": "Проект Дольче 167 м²",
+      "preview_image": "house_cards/дольче_1.png",
+      "price": "от 8.2 млн. ₽",
+      "size": "Габариты: 11 700 x 15 000",
+      "photo_house": "houses/дольче_1.png",
+      "floor": 1,
+      "total_area": "167 м²",
+      "bedroom": 4,
+      "bathroom": 2,
+      "living_room_area": "43 м²",
+      "terrace_count": 2,
+      "description": "Проект “Дольче 167 м2” вдохновлен стилем легендарного американского архитектора Фрэнка Ллойда Райта, который создал \"органическую архитектуру\". Простые линии, минимум декора, легкость и естественность - вот основные принципы этого стиля. Для фасада используются натуральные материалы, такие как камень и дерево.\r\n\r\nПроектирование было доверено опытному архитектору, поэтому результат получился таким продуманным!\r\n\r\nОбщая площадь составляет 167 квадратных метров.\r\n\r\nПланировкой предусмотрено просторная гостиная площадью 29,52 кв. м совмещенная с кухней 13,34 кв. м. 4 спальные комнаты, гардеробная, 2 санузла, отдельное помещение под бойлерную, тамбур и большая терраса 25,20 кв. м.\r\n\r\nЕсли вы заинтересованы в приобретении проекта “Дольче” площадью 167 м2, вы можете выбрать строительство \"под ключ\" или строительство “под отделку”.\r\n\r\nДля обеспечения высокой надежности и долговечности используются только самые качественные материалы."
+    }
+  },
+  {
+    "model": "houses.houseplan",
+    "pk": 1,
+    "fields": {
+      "plan": 1,
+      "plan_image": "house_plans/фасад_1.jpg",
+      "order": 1
+    }
+  },
+  {
+    "model": "houses.houseplan",
+    "pk": 2,
+    "fields": {
+      "plan": 1,
+      "plan_image": "house_plans/фасад_2.jpg",
+      "order": 2
+    }
+  },
+  {
+    "model": "houses.houseplan",
+    "pk": 3,
+    "fields": {
+      "plan": 1,
+      "plan_image": "house_plans/фасад_3.jpg",
+      "order": 3
+    }
+  },
+  {
+    "model": "houses.houseplan",
+    "pk": 4,
+    "fields": {
+      "plan": 1,
+      "plan_image": "house_plans/план_1.jpg",
+      "order": 4
+    }
+  },
+  {
+    "model": "houses.houseplan",
+    "pk": 5,
+    "fields": {
+      "plan": 1,
+      "plan_image": "house_plans/план_2.jpg",
+      "order": 5
+    }
+  },
+  {
+    "model": "houses.houseplan",
+    "pk": 6,
+    "fields": {
+      "plan": 2,
+      "plan_image": "house_plans/фасад_пегас_1.jpg",
+      "order": 1
+    }
+  },
+  {
+    "model": "houses.houseplan",
+    "pk": 7,
+    "fields": {
+      "plan": 2,
+      "plan_image": "house_plans/фасад_пегас_2.jpg",
+      "order": 2
+    }
+  },
+  {
+    "model": "houses.houseplan",
+    "pk": 8,
+    "fields": {
+      "plan": 2,
+      "plan_image": "house_plans/фасад_пегас_3f.jpg",
+      "order": 3
+    }
+  },
+  {
+    "model": "houses.houseplan",
+    "pk": 9,
+    "fields": {
+      "plan": 2,
+      "plan_image": "house_plans/фасад_пегас_4.jpg",
+      "order": 4
+    }
+  },
+  {
+    "model": "houses.houseplan",
+    "pk": 10,
+    "fields": {
+      "plan": 2,
+      "plan_image": "house_plans/план_пегас_1.jpg",
+      "order": 5
+    }
+  },
+  {
+    "model": "houses.houseplan",
+    "pk": 11,
+    "fields": {
+      "plan": 6,
+      "plan_image": "house_plans/фасад_1.png",
+      "order": 1
+    }
+  },
+  {
+    "model": "houses.houseplan",
+    "pk": 12,
+    "fields": {
+      "plan": 6,
+      "plan_image": "house_plans/фасад_2.png",
+      "order": 2
+    }
+  },
+  {
+    "model": "houses.houseplan",
+    "pk": 13,
+    "fields": {
+      "plan": 6,
+      "plan_image": "house_plans/план_1.png",
+      "order": 3
+    }
+  },
+  {
+    "model": "houses.houseplan",
+    "pk": 14,
+    "fields": {
+      "plan": 4,
+      "plan_image": "house_plans/фасад_саваж_1.jpg",
+      "order": 1
+    }
+  },
+  {
+    "model": "houses.houseplan",
+    "pk": 15,
+    "fields": {
+      "plan": 4,
+      "plan_image": "house_plans/фасад_саваж_2.jpg",
+      "order": 2
+    }
+  },
+  {
+    "model": "houses.houseplan",
+    "pk": 16,
+    "fields": {
+      "plan": 4,
+      "plan_image": "house_plans/фасад_саваж_3.jpg",
+      "order": 3
+    }
+  },
+  {
+    "model": "houses.houseplan",
+    "pk": 17,
+    "fields": {
+      "plan": 4,
+      "plan_image": "house_plans/фасад_саваж_4.jpg",
+      "order": 4
+    }
+  },
+  {
+    "model": "houses.houseplan",
+    "pk": 18,
+    "fields": {
+      "plan": 4,
+      "plan_image": "house_plans/план_саваж_1.jpg",
+      "order": 5
+    }
+  },
+  {
+    "model": "houses.houseplan",
+    "pk": 19,
+    "fields": {
+      "plan": 5,
+      "plan_image": "house_plans/фасад_хилтон_1.jpg",
+      "order": 1
+    }
+  },
+  {
+    "model": "houses.houseplan",
+    "pk": 20,
+    "fields": {
+      "plan": 5,
+      "plan_image": "house_plans/фасад_хилтон_2.jpg",
+      "order": 2
+    }
+  },
+  {
+    "model": "houses.houseplan",
+    "pk": 21,
+    "fields": {
+      "plan": 5,
+      "plan_image": "house_plans/фасад_хилтон_3.jpg",
+      "order": 3
+    }
+  },
+  {
+    "model": "houses.houseplan",
+    "pk": 22,
+    "fields": {
+      "plan": 5,
+      "plan_image": "house_plans/фасад_хилтон_4.jpg",
+      "order": 4
+    }
+  },
+  {
+    "model": "houses.houseplan",
+    "pk": 23,
+    "fields": {
+      "plan": 5,
+      "plan_image": "house_plans/план_хилтон_1.png",
+      "order": 5
+    }
+  },
+  {
+    "model": "houses.houseplan",
+    "pk": 24,
+    "fields": {
+      "plan": 3,
+      "plan_image": "house_plans/Фасад_клер_1.jpg",
+      "order": 1
+    }
+  },
+  {
+    "model": "houses.houseplan",
+    "pk": 25,
+    "fields": {
+      "plan": 3,
+      "plan_image": "house_plans/фасад_клер_2.jpg",
+      "order": 2
+    }
+  },
+  {
+    "model": "houses.houseplan",
+    "pk": 26,
+    "fields": {
+      "plan": 3,
+      "plan_image": "house_plans/Фасад_клер_3.jpg",
+      "order": 3
+    }
+  },
+  {
+    "model": "houses.houseplan",
+    "pk": 27,
+    "fields": {
+      "plan": 3,
+      "plan_image": "house_plans/Фасад_клер_4.jpg",
+      "order": 4
+    }
+  },
+  {
+    "model": "houses.houseplan",
+    "pk": 28,
+    "fields": {
+      "plan": 3,
+      "plan_image": "house_plans/План_клер_1.jpg",
+      "order": 5
+    }
+  },
+  {
+    "model": "houses.houseimage",
+    "pk": 12,
+    "fields": {
+      "house": 1,
+      "image": "house_images/марсель_фото_1.jpg",
+      "order": 1
+    }
+  },
+  {
+    "model": "houses.houseimage",
+    "pk": 13,
+    "fields": {
+      "house": 1,
+      "image": "house_images/марсель_фото_2.jpg",
+      "order": 2
+    }
+  },
+  {
+    "model": "houses.houseimage",
+    "pk": 14,
+    "fields": {
+      "house": 1,
+      "image": "house_images/марсель_фото_3.jpg",
+      "order": 3
+    }
+  },
+  {
+    "model": "houses.houseimage",
+    "pk": 15,
+    "fields": {
+      "house": 1,
+      "image": "house_images/марсель_фото_4.jpg",
+      "order": 4
+    }
+  },
+  {
+    "model": "houses.houseimage",
+    "pk": 16,
+    "fields": {
+      "house": 2,
+      "image": "house_images/пегас_1.jpg",
+      "order": 1
+    }
+  },
+  {
+    "model": "houses.houseimage",
+    "pk": 17,
+    "fields": {
+      "house": 2,
+      "image": "house_images/пегас_2.jpg",
+      "order": 2
+    }
+  },
+  {
+    "model": "houses.houseimage",
+    "pk": 18,
+    "fields": {
+      "house": 2,
+      "image": "house_images/пегас_3.jpg",
+      "order": 3
+    }
+  },
+  {
+    "model": "houses.houseimage",
+    "pk": 19,
+    "fields": {
+      "house": 2,
+      "image": "house_images/пегас_4.jpg",
+      "order": 4
+    }
+  },
+  {
+    "model": "houses.houseimage",
+    "pk": 20,
+    "fields": {
+      "house": 6,
+      "image": "house_images/дольче_1.png",
+      "order": 1
+    }
+  },
+  {
+    "model": "houses.houseimage",
+    "pk": 21,
+    "fields": {
+      "house": 6,
+      "image": "house_images/дольче_2.png",
+      "order": 2
+    }
+  },
+  {
+    "model": "houses.houseimage",
+    "pk": 22,
+    "fields": {
+      "house": 6,
+      "image": "house_images/дольче_3.png",
+      "order": 3
+    }
+  },
+  {
+    "model": "houses.houseimage",
+    "pk": 23,
+    "fields": {
+      "house": 4,
+      "image": "house_images/саваж_1.jpg",
+      "order": 1
+    }
+  },
+  {
+    "model": "houses.houseimage",
+    "pk": 24,
+    "fields": {
+      "house": 4,
+      "image": "house_images/саваж_2.jpg",
+      "order": 2
+    }
+  },
+  {
+    "model": "houses.houseimage",
+    "pk": 25,
+    "fields": {
+      "house": 4,
+      "image": "house_images/саваж_3.jpg",
+      "order": 3
+    }
+  },
+  {
+    "model": "houses.houseimage",
+    "pk": 26,
+    "fields": {
+      "house": 4,
+      "image": "house_images/саваж_4.jpg",
+      "order": 4
+    }
+  },
+  {
+    "model": "houses.houseimage",
+    "pk": 27,
+    "fields": {
+      "house": 5,
+      "image": "house_images/хилтон_1.jpg",
+      "order": 1
+    }
+  },
+  {
+    "model": "houses.houseimage",
+    "pk": 28,
+    "fields": {
+      "house": 5,
+      "image": "house_images/хилтон_2.jpg",
+      "order": 2
+    }
+  },
+  {
+    "model": "houses.houseimage",
+    "pk": 29,
+    "fields": {
+      "house": 5,
+      "image": "house_images/хилтон_3.jpg",
+      "order": 3
+    }
+  },
+  {
+    "model": "houses.houseimage",
+    "pk": 30,
+    "fields": {
+      "house": 5,
+      "image": "house_images/хилтон_4.jpg",
+      "order": 4
+    }
+  },
+  {
+    "model": "houses.houseimage",
+    "pk": 31,
+    "fields": {
+      "house": 3,
+      "image": "house_images/Клер_1.jpg",
+      "order": 1
+    }
+  },
+  {
+    "model": "houses.houseimage",
+    "pk": 32,
+    "fields": {
+      "house": 3,
+      "image": "house_images/Клер_2.jpg",
+      "order": 2
+    }
+  },
+  {
+    "model": "houses.houseimage",
+    "pk": 33,
+    "fields": {
+      "house": 3,
+      "image": "house_images/Клер_3.jpg",
+      "order": 3
+    }
+  },
+  {
+    "model": "houses.houseimage",
+    "pk": 34,
+    "fields": {
+      "house": 3,
+      "image": "house_images/Клер_4.jpg",
+      "order": 4
+    }
+  }
+]

@@ -1,0 +1,47 @@
+services:
+  postgres:
+    image: postgres:13
+    container_name: postgres_ZMO
+    env_file: .env
+    environment:
+      POSTGRES_USER: ${POSTGRESQL_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD_DOCKER}
+      POSTGRES_DB: ${POSTGRES_DATABASE_DOCKER}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRESQL_USER} -d ${POSTGRES_DATABASE_DOCKER}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  api:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    container_name: django_api
+    command: >
+      sh -c "python manage.py migrate &&
+             python manage.py collectstatic --noinput &&
+             python manage.py loaddata houses.json villages.json partners.json &&
+             python manage.py ccsu &&
+             python manage.py runserver 0.0.0.0:8000"
+    environment:
+      - DOCKER_DEVELOPMENT=true
+    env_file: .env
+    volumes:
+      - static_volume:/code/staticfiles
+      - media_volume:/code/media
+      - .:/code
+    ports:
+      - "8000:8000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+volumes:
+  postgres_data:
+  static_volume:
+  media_volume:

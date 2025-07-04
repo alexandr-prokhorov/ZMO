@@ -1,0 +1,110 @@
+[
+  {
+    "model": "partners.partners",
+    "pk": 1,
+    "fields": {
+      "name": "Макеево просторы",
+      "image": "partners/маккеево-просторы.png",
+      "registration": 10000,
+      "reservation": 30000,
+      "address": "метро Румянцево (любой выход) БП Румянцево, корпус Г, 13 подъезд",
+      "yandex_map": "https://yandex.ru/maps/213/moscow/?ll=37.436661%2C55.635401&mode=whatshere&whatshere%5Bpoint%5D=37.436984%2C55.634459&whatshere%5Bzoom%5D=18&z=16"
+    }
+  },
+  {
+    "model": "partners.partners",
+    "pk": 3,
+    "fields": {
+      "name": "Сосны Лайф",
+      "image": "partners/Сосны-лайф.png",
+      "registration": 10000,
+      "reservation": 30000,
+      "address": "метро Румянцево (любой выход) БП Румянцево, корпус Г, 13 подъезд",
+      "yandex_map": "https://yandex.ru/maps/213/moscow/?ll=37.436661%2C55.635401&mode=whatshere&whatshere%5Bpoint%5D=37.436984%2C55.634459&whatshere%5Bzoom%5D=18&z=16"
+    }
+  },
+  {
+    "model": "partners.partners",
+    "pk": 4,
+    "fields": {
+      "name": "Агарино",
+      "image": "partners/Агарино.png",
+      "registration": 10000,
+      "reservation": 30000,
+      "address": "метро Румянцево (любой выход) БП Румянцево, корпус Г, 13 подъезд",
+      "yandex_map": "https://yandex.ru/maps/213/moscow/?ll=37.436661%2C55.635401&mode=whatshere&whatshere%5Bpoint%5D=37.436984%2C55.634459&whatshere%5Bzoom%5D=18&z=16"
+    }
+  },
+  {
+    "model": "partners.partners",
+    "pk": 5,
+    "fields": {
+      "name": "Большое татариново",
+      "image": "partners/Большое_татариново.png",
+      "registration": 15000,
+      "reservation": 30000,
+      "address": "метро Румянцево (любой выход) БП Румянцево, корпус Г, 13 подъезд",
+      "yandex_map": "https://yandex.ru/maps/213/moscow/?ll=37.436661%2C55.635401&mode=whatshere&whatshere%5Bpoint%5D=37.436984%2C55.634459&whatshere%5Bzoom%5D=18&z=16"
+    }
+  },
+  {
+    "model": "partners.partners",
+    "pk": 6,
+    "fields": {
+      "name": "Истринские просторы",
+      "image": "partners/Истринские-просторы.png",
+      "registration": 20000,
+      "reservation": 50000,
+      "address": "метро Румянцево (любой выход) БП Румянцево, корпус Г, 13 подъезд",
+      "yandex_map": "https://yandex.ru/maps/213/moscow/?ll=37.436661%2C55.635401&mode=whatshere&whatshere%5Bpoint%5D=37.436984%2C55.634459&whatshere%5Bzoom%5D=18&z=16"
+    }
+  },
+  {
+    "model": "partners.partners",
+    "pk": 7,
+    "fields": {
+      "name": "Кальянино лайф",
+      "image": "partners/Кальянино-лайф.png",
+      "registration": 15000,
+      "reservation": 30000,
+      "address": "г.Москва , Научный проезд 17, 3 подъезд",
+      "yandex_map": "https://yandex.ru/maps/213/moscow/?ll=37.555714%2C55.654239&mode=whatshere&whatshere%5Bpoint%5D=37.555709%2C55.654234&whatshere%5Bzoom%5D=21&z=18"
+    }
+  },
+  {
+    "model": "partners.partners",
+    "pk": 8,
+    "fields": {
+      "name": "Новое ивановское",
+      "image": "partners/Новое-Ивановское.png",
+      "registration": 10000,
+      "reservation": 30000,
+      "address": "метро Румянцево (любой выход) БП Румянцево, корпус Г, 13 подъезд",
+      "yandex_map": "https://yandex.ru/maps/213/moscow/?ll=37.436661%2C55.635401&mode=whatshere&whatshere%5Bpoint%5D=37.436984%2C55.634459&whatshere%5Bzoom%5D=18&z=16"
+    }
+  },
+  {
+    "model": "partners.partners",
+    "pk": 9,
+    "fields": {
+      "name": "Новое проскурниково",
+      "image": "partners/Новое-проскурниково.png",
+      "registration": 15000,
+      "reservation": 30000,
+      "address": "метро Румянцево (любой выход) БП Румянцево, корпус Г, 13 подъезд",
+      "yandex_map": "https://yandex.ru/maps/213/moscow/?ll=37.436661%2C55.635401&mode=whatshere&whatshere%5Bpoint%5D=37.436984%2C55.634459&whatshere%5Bzoom%5D=18&z=16"
+    }
+  },
+  {
+    "model": "partners.partners",
+    "pk": 10,
+    "fields": {
+      "name": "Протасово",
+      "image": "partners/Протасово.png",
+      "registration": 10000,
+      "reservation": 30000,
+      "address": "метро Румянцево (любой выход) БП Румянцево, корпус Г, 13 подъезд",
+      "yandex_map": "https://yandex.ru/maps/213/moscow/?ll=37.436661%2C55.635401&mode=whatshere&whatshere%5Bpoint%5D=37.436984%2C55.634459&whatshere%5Bzoom%5D=18&z=16"
+    }
+  }
+]
