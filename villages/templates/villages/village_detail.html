@@ -1,0 +1,207 @@
+{% extends 'houses/base.html' %}
+{% load static %}
+{% load video_tags %}
+
+{% block title %}{{ village.name }}{% endblock %}
+
+{% block content %}
+<div class="card border-0">
+    <div class="position-relative" style="min-height: 500px;">
+        {% if village.photo_village %}
+        <div class="position-absolute w-100 h-100"
+             style="background: url('{{ village.photo_village.url }}') center/cover no-repeat; filter: brightness(0.8); z-index: 1;">
+        </div>
+        {% endif %}
+
+        <div class="position-relative h-100 d-flex align-items-center" style="z-index: 2;">
+            <div class="card-body text-white p-4" style="background-color: rgba(0,0,0,0.5); max-width: 60%;">
+                <h1 class="card-title display-4">{{ village.name }}</h1>
+                <p>{{ village.address }}</p>
+                <div class="mt-4 pt-2" style="border-top: 1px solid rgba(255,255,255,0.2);"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid bg-dark text-white py-1">
+    <div class="row justify-content-center g-4">
+        <div class="col-md-3 col-6">
+            <div class="bg-black rounded-3 p-3 h-100">
+                <p class="text-uppercase text-muted mb-0" style="font-size: 1rem;">от МКАД:</p>
+                <p class="fw-bold mb-1" style="font-size: 1.5rem;">{{ village.distance_mkad }} км.</p>
+            </div>
+        </div>
+
+        <div class="col-md-4 col-6">
+            <div class="bg-black rounded-3 p-3 h-100">
+                <p class="text-uppercase text-muted mb-0" style="font-size: 1rem;">Стоимость сотки:</p>
+                <p class="fw-bold mb-1" style="font-size: 1.5rem;">от {{ village.price }} руб./сотка</p>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-6">
+            <div class="bg-black rounded-3 p-3 h-100">
+                <p class="text-uppercase text-muted mb-0" style="font-size: 1rem;">Коммуникации:</p>
+                <p class="fw-bold mb-1" style="font-size: 1.5rem;">{{ village.communications }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container my-5">
+     <h2 class="about-title">Карта поселка "{{ village.name }}"</h2>
+    <div class="row g-4">
+        <div style="position:relative; width: 100%; padding-bottom: 50%;"><a href="https://yandex.ru/maps?utm_medium=mapframe&utm_source=maps"
+                                                           style="color:#eee;font-size:12px;position:absolute;top:0px;">Яндекс Карты</a><a
+                href="https://yandex.ru/maps/geo/kp_yusupovo/6460538402/?l=sat%2Cskl&ll=37.750664%2C55.233116&utm_medium=mapframe&utm_source=maps&z=15"
+                style="color:#eee;font-size:12px;position:absolute;top:14px;">КП Юсупово — Яндекс Карты</a>
+            <iframe src= "{{ village.yandex_map_embed }}"
+                    style="position: absolute; width: 100%; height: 100%; border: none;"
+        allowfullscreen></iframe>
+        </div>
+    </div>
+</div>
+
+{% if village.video_url %}
+<div class="my-5 py-3">
+    <div class="container mb-4">  <!-- Заголовок остается в container для выравнивания -->
+        <h2 class="about-title" style="font-size: 2rem;">Видео о поселке "{{ village.name }}"</h2>
+    </div>
+    <div class="ratio ratio-16x9 shadow-lg rounded-3 overflow-hidden" style="height: 650px;">
+        <iframe
+                src="{{ village.video_url|get_video_embed_url }}"
+                class="w-100 h-100"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+                frameborder="0">
+        </iframe>
+    </div>
+</div>
+{% endif %}
+
+<div class="my-5 py-3 container description-block">
+    <h2 class="about-title">Описание</h2>
+    <div class="description-content">
+        <p>{{ village.description|linebreaks }}</p>
+    </div>
+</div>
+
+<div class="container my-5">
+    <div class="row g-4">
+        <!-- Левая колонка с картинкой и текстом НА ней -->
+        <div class="col-lg-6 position-relative"
+             style="height: 410px; background: url('{% static 'images/панорамаМО.jpg' %}') no-repeat center center;
+              background-size: cover; border-radius: 0.375rem;">
+            <p style="font-family: serif; font-size: xx-large; color: white; padding-top: 300px">Уникальная природная
+                локация <br> около Москвы</p>
+        </div>
+
+        <!-- Правая колонка (50% ширины) -->
+        <div class="col-lg-6">
+            <div class="row g-4">
+                <!-- Блок 1 -->
+                <div class="col-md-5">
+                    <div class="h-100 p-3 border rounded-3 bg-light d-flex flex-column text-center"
+                         style="border-radius: 10px;">
+                        <div class="mb-3">
+                            <p class="fw-bold fs-5 mb-1" style="font-size: larger">Участки ИЖС</p>
+                            <p class="text-muted">Возможность прописки</p>
+                        </div>
+                        <img src="{% static 'images/licensing.png' %}"
+                             class="img-fluid mx-auto mt-auto"
+                             style="max-height: 50px;"
+                             alt="Прописка">
+                    </div>
+                </div>
+
+                <!-- Блок 2 -->
+                <div class="col-md-7">
+                    <div class="h-100 p-3 border rounded-3 bg-light d-flex flex-column text-center"
+                         style="border-radius: 10px;">
+                        <p class="fw-bold fs-5 mb-3" style="font-size: larger">Центральные коммуникации под ключ</p>
+                        <img src="{% static 'images/home_communication.png' %}"
+                             class="img-fluid mx-auto mt-auto"
+                             style="max-height: 50px;"
+                             alt="Коммуникации">
+                    </div>
+                </div>
+
+                <!-- Блок 3 -->
+                <div class="col-md-7" style="padding-top: 10px">
+                    <div class="h-100 p-3 border rounded-3 bg-light d-flex flex-column text-center"
+                         style="border-radius: 10px;">
+                        <div class="mb-3">
+                            <p class="fw-bold fs-5 mb-1" style="font-size: larger">Выгодные условия рассрочки</p>
+                            <p class="text-muted">Рассрочка от 0 до 6 месяцев</p>
+                        </div>
+                        <img src="{% static 'images/special-offer_11800195.png' %}"
+                             class="img-fluid mx-auto mt-auto"
+                             style="max-height: 50px;"
+                             alt="Рассрочка">
+                    </div>
+                </div>
+
+                <!-- Блок 4 -->
+                <div class="col-md-5" style="padding-top: 10px; border-radius: 30px">
+                    <div class="h-100 p-3 border rounded-3 bg-light d-flex flex-column text-center"
+                         style="border-radius: 10px;">
+                        <p class="fw-bold fs-5 mb-3" style="font-size: larger">Развитая инфраструктура</p>
+                        <img src="{% static 'images/infrastructure.png' %}"
+                             class="img-fluid mx-auto mt-auto"
+                             style="max-height: 50px;"
+                             alt="Инфраструктура">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Добавляем важные стили для фиксации текста поверх изображений */
+    .position-relative {
+        position: relative !important;
+    }
+
+    .position-absolute {
+        position: absolute !important;
+    }
+
+    /* Гарантируем, что текст будет поверх изображения */
+    [style*="z-index: 2"] {
+        z-index: 2 !important;
+    }
+
+    /* Отключаем все переходы и трансформации */
+    .bg-black {
+        transition: none !important;
+        transform: none !important;
+    }
+
+    /* Отключаем эффекты при наведении */
+    .bg-black:hover {
+        transform: none !important;
+        box-shadow: none !important;
+    }
+
+    /* Стили для описания */
+    .description-block {
+        background: #f8f9fa;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .description-title {
+        font-size: 2rem;
+        color: #333;
+        margin-bottom: 1.5rem;
+    }
+
+    .description-content p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        color: #555;
+    }
+</style>
+
+{% endblock %}
