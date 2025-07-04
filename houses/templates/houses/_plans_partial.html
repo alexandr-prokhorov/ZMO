@@ -2,14 +2,14 @@
 <div class="col-12 mb-4 plan-item p-0">
     <div class="card border-0 h-100">
         {% if plan.plan_image %}
-            <img src="{{ plan.plan_image.url }}"
-                 class="img-fluid w-100 h-100"
-                 style="object-fit: cover;"
-                 alt="План дома">
+        <img src="{{ plan.plan_image.url }}"
+             class="img-fluid w-100 h-100"
+             style="object-fit: cover;"
+             alt="План дома">
         {% else %}
-            <div class="bg-light d-flex align-items-center justify-content-center h-100" style="min-height: 70vh;">
-                <span class="text-muted">Изображение отсутствует</span>
-            </div>
+        <div class="bg-light d-flex align-items-center justify-content-center h-100" style="min-height: 70vh;">
+            <span class="text-muted">Изображение отсутствует</span>
+        </div>
         {% endif %}
     </div>
 </div>
