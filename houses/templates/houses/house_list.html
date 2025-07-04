@@ -3,10 +3,10 @@
 {% block title %}Список домов{% endblock %}
 
 {% block content %}
-    <div class="row">
-        {% for house in houses %}
-            <div class="col-md-6 mb-4">
-                <a href="{% url 'house-detail' house.pk %}" class="card clickable-card" style="
+<div class="row">
+    {% for house in houses %}
+    <div class="col-md-6 mb-4">
+        <a href="{% url 'house-detail' house.pk %}" class="card clickable-card" style="
                     background-image: url('{{ house.preview_image.url }}');
                     background-size: cover;
                     background-position: center;
@@ -19,14 +19,14 @@
                     transition: none !important;
                     transform: none !important;
                 ">
-                    <div style="background: rgba(0, 0, 0, 0.5); padding: 1rem;">
-                        <h5 class="card-title">{{ house.name }}</h5>
-                        <p class="card-text">Цена: {{ house.price }} </p>
-                        <p class="card-text">Габариты: {{ house.size }}</p>
-                    </div>
-                </a>
+            <div style="background: rgba(0, 0, 0, 0.5); padding: 1rem;">
+                <h5 class="card-title">{{ house.name }}</h5>
+                <p class="card-text">Цена: {{ house.price }} </p>
+                <p class="card-text">Габариты: {{ house.size }}</p>
             </div>
-        {% endfor %}
+        </a>
     </div>
+    {% endfor %}
+</div>
 
 {% endblock %}

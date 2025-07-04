@@ -1,6 +1,3 @@
-from symtable import Class
-
-from django.shortcuts import get_object_or_404, redirect
 from django.http import JsonResponse
 from django.views.generic import ListView, DetailView
 from django.core.paginator import Paginator
@@ -67,6 +64,7 @@ class HousePlanListView(ListView):
     paginate_by = 10
     ordering = ['order']
 
+
 class HouseImageView(ListView):
     model = HouseImage
     template_name = 'houses/house_image_list.html'
@@ -74,13 +72,17 @@ class HouseImageView(ListView):
     paginate_by = 10
     ordering = ['order']
 
+
 class ContactsView(View):
     template_name = 'houses/contacts.html'
+
     def get(self, request):
         return render(request, self.template_name)
 
+
 class InfoView(View):
     template_name = 'houses/info_company.html'
+
     def get(self, request):
         return render(request, self.template_name)
 

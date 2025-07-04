@@ -1,6 +1,5 @@
 from django import template
 import re
-from urllib.parse import urlparse, parse_qs
 
 register = template.Library()
 
@@ -8,7 +7,8 @@ register = template.Library()
 @register.filter
 def get_video_embed_url(url):
     # Для YouTube
-    youtube_match = re.match(r'(?:https?:\/\/)?(?:www\.)?(?:youtube\.com|youtu\.be)\/(?:watch\?v=)?([a-zA-Z0-9_-]+)', url)
+    youtube_match = re.match(r'(?:https?:\/\/)?(?:www\.)?(?:youtube\.com|youtu\.be)\/(?:watch\?v=)?([a-zA-Z0-9_-]+)',
+                             url)
     if youtube_match:
         video_id = youtube_match.group(1)
         return f"https://www.youtube.com/embed/{video_id}"

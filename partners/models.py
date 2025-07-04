@@ -1,10 +1,9 @@
 from django.db import models
-from django.conf import settings
 
 from users.models import NULLABLE
 
-class Partners(models.Model):
 
+class Partners(models.Model):
     name = models.CharField(max_length=250, verbose_name='Название компании')
     image = models.ImageField(upload_to='partners/', **NULLABLE, verbose_name='Логотип партнера')
     registration = models.PositiveIntegerField(**NULLABLE, verbose_name='Оформление')

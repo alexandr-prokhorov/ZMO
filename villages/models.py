@@ -1,5 +1,5 @@
 from django.db import models
-from django.conf import settings
+import re
 
 from users.models import NULLABLE
 

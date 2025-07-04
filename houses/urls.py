@@ -7,4 +7,4 @@ urlpatterns = [
     path('contacts/', ContactsView.as_view(), name='contacts'),
     path('info/', InfoView.as_view(), name='info_company'),
     path('index/', IndexView.as_view(), name='index'),
-    ]
+]
