@@ -3,17 +3,19 @@ from django.conf import settings
 
 from users.models import NULLABLE
 
-class Village(models.Model):
 
+class Village(models.Model):
     name = models.CharField(max_length=250, verbose_name='Название')
     preview_image = models.ImageField(upload_to='village_cards/', **NULLABLE, verbose_name='Превью поселка')
+    address = models.CharField(max_length=1000, **NULLABLE, verbose_name='Адрес поселка')
+    yandex_map_embed = models.TextField('Код iframe Яндекс.Карт', **NULLABLE,
+                                        help_text='Полный HTML-код iframe из Яндекс.Карт')
     photo_village = models.ImageField(upload_to='villages/', **NULLABLE, verbose_name='Фото Поселка')
     price = models.PositiveIntegerField(**NULLABLE, verbose_name='цена за сотку')
     distance_mkad = models.PositiveIntegerField(**NULLABLE, verbose_name='Расстояние от МКАД')
     communications = models.CharField(max_length=250, **NULLABLE, verbose_name='Коммуникации')
-    video_url = models.URLField(**NULLABLE,verbose_name='Ссылка на видео',help_text='Ссылка на YouTube или RuTube')
+    video_url = models.URLField(**NULLABLE, verbose_name='Ссылка на видео', help_text='Ссылка на YouTube или RuTube')
     description = models.TextField(**NULLABLE, verbose_name='Подробное описание')
-
 
     def __str__(self):
         return self.name
