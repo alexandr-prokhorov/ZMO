@@ -5,6 +5,10 @@ NULLABLE = {'blank': True, 'null': True}
 
 
 class User(AbstractUser):
+    """
+    Кастомная модель пользователя, где вместо username используется email.
+    Наследуется от стандартной AbstractUser и расширяется дополнительными полями.
+    """
     username = None
     email = models.EmailField(unique=True, verbose_name='Эл.Почта')
     phone = models.CharField(max_length=35, verbose_name='Номер Телефона', **NULLABLE)
@@ -15,9 +19,11 @@ class User(AbstractUser):
     REQUIRED_FIELDS = []
 
     def __str__(self):
+        """Строковое представление пользователя (используется email)."""
         return f'{self.email}'
 
     class Meta:
+        """Мета-настройки модели пользователя."""
         verbose_name = 'User'
         verbose_name_plural = 'Users'
         ordering = ['id']

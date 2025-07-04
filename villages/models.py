@@ -5,6 +5,15 @@ from users.models import NULLABLE
 
 
 class Village(models.Model):
+    """
+    Модель, представляющая поселок в системе.
+
+    Содержит информацию о поселке:
+    - Основные данные (название, адрес)
+    - Медиа-контент (фото, видео)
+    - Характеристики (цена, расстояние от МКАД, коммуникации)
+    - Геопозиция (встраиваемая карта)
+    """
     name = models.CharField(max_length=250, verbose_name='Название')
     preview_image = models.ImageField(upload_to='village_cards/', **NULLABLE, verbose_name='Превью поселка')
     address = models.CharField(max_length=1000, **NULLABLE, verbose_name='Адрес поселка')
@@ -18,15 +27,22 @@ class Village(models.Model):
     description = models.TextField(**NULLABLE, verbose_name='Подробное описание')
 
     def __str__(self):
+        """Строковое представление объекта (используется название поселка)."""
         return self.name
 
     class Meta:
+        """Мета-настройки модели Village."""
         verbose_name = 'Поселок'
         verbose_name_plural = 'Поселки'
 
     @property
     def video_platform(self):
-        """Определяет платформу видео"""
+        """
+        Определяет видеоплатформу по URL.
+
+        Возвращает:
+            str: 'youtube', 'rutube' или None, если платформа не распознана
+        """
         if not self.video_url:
             return None
         if 'youtube.com' in self.video_url or 'youtu.be' in self.video_url:
@@ -36,7 +52,14 @@ class Village(models.Model):
         return None
 
     def get_video_id(self):
-        """Извлекает ID видео из ссылки"""
+        """
+        Извлекает идентификатор видео из URL.
+
+        Использует регулярные выражения для различных форматов ссылок.
+
+        Возвращает:
+            str: ID видео или None, если не удалось извлечь
+        """
         if not self.video_url:
             return None
 
@@ -61,7 +84,12 @@ class Village(models.Model):
 
     @property
     def embed_url(self):
-        """Генерирует URL для встраивания"""
+        """
+        Генерирует URL для встраивания видео на основе распознанной платформы.
+
+        Возвращает:
+            str: Готовый URL для iframe или None, если не удалось сгенерировать
+        """
         if not self.video_url or not self.video_platform:
             return None
 
